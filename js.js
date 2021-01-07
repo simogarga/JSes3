@@ -35,8 +35,19 @@ function calcola(segno) {
       break;
   }
   $("#span1").html(risultato);
-  $("#tabella").append("<tr id=riga><td>"+n1+"</td><td>"+segno+"</td><td>"+n2+"</td><td>=</td><td>"+risultato+"</td><td><button id=btn>Elimina</button> </td></tr>");
-  $("#btn").click(function(){
-   $("#riga").remove();
+ var string = "<tr id=riga><td>"+n1+"</td><td>"+segno+"</td><td>"+n2+"</td><td>=</td><td>"+risultato+"</td><td><button id=btn>Elimina</button> </td></tr>";
+
+   localStorage.setItem("operation", string);
+   var last_operation = localStorage.getItem("operation");
+   if($()===undefined){
+
+
+   }else{
+
+
+   }
+   $("#tabella").append(string);
+   $("#btn").click(function(){
+    $("#riga").remove();
   })
 }
